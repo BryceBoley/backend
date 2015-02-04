@@ -14,9 +14,4 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 
-    def get_events(self, obj):
-        events = Events.objects.filter(event=obj.id)
-        serializer = EventSerializer(events, many=True)
-        return serializer.data
-
 
