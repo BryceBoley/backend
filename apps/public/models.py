@@ -5,10 +5,10 @@ from django.contrib.auth.models import Group
 
 # Create your models here.
 class Event(models.Model):
-    host = models.ForeignKey(User)
+    # host = models.ForeignKey(User)
     description = models.TextField(blank=True, help_text="Describe your group")
     location = models.TextField(help_text="Where should members go for your dinner group?")
-    # members = models.ManyToManyField(User)
+    # attendees = models.ForeignKey(Groups)
     food_allergies = models.TextField(blank=True)
     pics = models.ImageField(upload_to='photos', blank=True, null=True)
     # creator = models.OneToOneField(User)
@@ -19,7 +19,7 @@ class Event(models.Model):
 
 
 class UserProfile(models.Model):
-    # user = models.ForeignKey(User)
+    # user = models.OneToOneField(User)
     phone_number = models.CharField(max_length=15)
     street = models.CharField(max_length=75, blank=False)
     city = models.CharField(max_length=50, blank=False)
