@@ -21,10 +21,10 @@ class Event(models.Model):
 class UserProfile(models.Model):
     # user = models.ForeignKey(User)
     phone_number = models.CharField(max_length=15)
-    street = models.CharField(max_length=75)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=35)
-    food_allergies = models.TextField(max_length=75)
+    street = models.CharField(max_length=75, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    state = models.CharField(max_length=35, blank=True)
+    food_allergies = models.TextField(max_length=75, default="Any food allergies?")
     profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
