@@ -24,11 +24,11 @@ class UserProfile(models.Model):
     street = models.CharField(max_length=75, blank=False)
     city = models.CharField(max_length=50, blank=False)
     state = models.CharField(max_length=35, blank=False)
-    food_allergies = models.TextField(max_length=75, default="Any food allergies?", blank=True)
+    food_allergies = models.TextField(max_length=75, default="Have any food allergies you want the group to know about?", blank=True)
     profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
-        return u"%s" % self.user  # Need to change to user (according to model)
+        return self.user.names
 
 
 # class Group(models.Model):
@@ -36,6 +36,7 @@ class UserProfile(models.Model):
 #     description = models.TextField(blank=True, null=True, help_text="Describe your group")
 #     pics = models.ImageField(upload_to='photos', blank=True, null=True)
 #     event = models.ManyToManyField(Event)
+#     blah = models.TextField()
 #
 #     def __str__(self):
-#         return self.name
+#         return self.user.name
