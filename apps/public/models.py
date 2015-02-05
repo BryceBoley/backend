@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 
 # Create your models here.
 class Event(models.Model):
-    # host = models.ForeignKey(User)
+    host = models.ForeignKey(User)
     description = models.TextField(blank=True, help_text="Describe your group")
     location = models.TextField(help_text="Where should members go for your dinner group?")
     # attendees = models.ForeignKey(Groups)
