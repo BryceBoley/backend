@@ -5,11 +5,11 @@ from django.contrib.auth.models import Group
 
 # Create your models here.
 class Event(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True, null=True, help_text="Describe your group")
-    location = models.TextField(help_text="What can people put into maps to get to your house")
+    host = models.ForeignKey(max_length=100)
+    description = models.TextField(blank=True, help_text="Describe your group")
+    location = models.TextField(help_text="Where should members go for your dinner group?")
     # members = models.ManyToManyField(User)
-    food_allergies = models.TextField(blank=True, null=True)
+    food_allergies = models.TextField(blank=True)
     pics = models.ImageField(upload_to='photos', blank=True, null=True)
     # creator = models.OneToOneField(User)
     # date = models.parse_datetime()
@@ -21,10 +21,10 @@ class Event(models.Model):
 class UserProfile(models.Model):
     # user = models.ForeignKey(User)
     phone_number = models.CharField(max_length=15)
-    street = models.CharField(max_length=75, blank=True)
-    city = models.CharField(max_length=50, blank=True)
-    state = models.CharField(max_length=35, blank=True)
-    food_allergies = models.TextField(max_length=75, default="Any food allergies?")
+    street = models.CharField(max_length=75, blank=False)
+    city = models.CharField(max_length=50, blank=False)
+    state = models.CharField(max_length=35, blank=False)
+    food_allergies = models.TextField(max_length=75, default="Any food allergies?", blank=True)
     profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):

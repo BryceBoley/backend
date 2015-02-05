@@ -92,3 +92,8 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# MEDIA_ROOT = file_path
+# Above class is a full path to a directory where you’d like
+# Django to store uploaded files (uploaded pictures?)
