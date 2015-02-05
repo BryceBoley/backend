@@ -1,17 +1,8 @@
-__author__ = 'macuser'
 from rest_framework import serializers
 from models import *
 
 
+class DinnerSerializer(serializers.ModelSerializer):
 
-class EventSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Event
-
-
-
-
-
-
-
+	class Meta:
+		model = Dinner

@@ -1,8 +1,22 @@
-from django.shortcuts import render
 from rest_framework import generics
 from serializers import *
-# Create your views here.
 
-class EventList(generics.ListCreateAPIView):
-    serializer_class = EventSerializer
-    queryset = Event.objects.all()
+
+class DinnerList(generics.ListAPIView):
+    serializer_class = DinnerSerializer
+    queryset = Dinner.objects.all()
+
+
+
+class NewDinner(generics.CreateAPIView):
+    serializer_class = DinnerSerializer
+    queryset = Dinner.objects.all()
+
+
+class EditDinner(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = DinnerSerializer
+    queryset = Dinner.objects.all()
+
+
+
+
