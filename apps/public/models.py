@@ -9,7 +9,7 @@ class Event(models.Model):
 	description = models.TextField(blank=True, null=True, help_text="Describe your event")
 	# pics = models.ImageField(upload_to='photos', blank=True, null=True)
 	messages = models.TextField(blank=True, null=True, help_text="Messages about event")
-	members = models.CharField(max_length=250)
+	members = models.CharField(max_length=250, null=True)
 
 	def __str__(self):
 		return self.name

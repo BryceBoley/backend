@@ -17,10 +17,11 @@ class EditEvent(generics.RetrieveUpdateDestroyAPIView):
     queryset = Event.objects.all()
 
 
-class MembersList(generics.ListAPIView):
+class AddMember(generics.CreateAPIView):
     serializer_class = MemberSerializer
     queryset = Members.objects.all()
 
 
-
-
+class MembersList(generics.ListAPIView):
+    serializer_class = EventSerializer
+    queryset = Event.objects.all()
