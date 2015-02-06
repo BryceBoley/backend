@@ -1,4 +1,5 @@
 my_django_project
 =================
-
+What a lame README...
 my_django_project
+Fill thi in to play with git...
