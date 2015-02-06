@@ -2,7 +2,25 @@ from rest_framework import serializers
 from models import *
 
 
-class DinnerSerializer(serializers.ModelSerializer):
+class MemberSerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = Dinner
+		model = Members
+
+
+class EventSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Event
+
+	def create(self, validated_data):
+		members_data = validated_data.pop('members')
+		event = Event.objects.create(**validated_data)
+		for member in members_data:
+			try:
+				member = Members.objects.get(name=member["name"])
+			except Members.DoesNotExist:
+				member = Members.objects.create(**member)
+			event.members.add(member)
+
+		return event

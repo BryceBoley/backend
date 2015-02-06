@@ -3,4 +3,5 @@ from models import *
 
 # Register your models here.
 
-admin.site.register(Dinner)
+admin.site.register(Event)
+admin.site.register(Members)
