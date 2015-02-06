@@ -3,6 +3,6 @@ from rest_framework import generics
 from serializers import *
 # Create your views here.
 
-class EventList(generics.ListCreateAPIView):
+class EventList(generics.ListAPIView):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
