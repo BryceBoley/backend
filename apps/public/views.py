@@ -23,5 +23,5 @@ class AddMember(generics.CreateAPIView):
 
 
 class MembersList(generics.ListAPIView):
-    serializer_class = EventSerializer
-    queryset = Event.objects.all()
+    serializer_class = MemberSerializer
+    queryset = Members.objects.all()
