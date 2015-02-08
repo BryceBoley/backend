@@ -12,5 +12,6 @@ urlpatterns = patterns(
 	url(r'^add_member$', AddEvent.as_view(), name='add_member'),
 	# url(r'^edit_event/(?P<pk>[0-9]+)$', EditEvent.as_view(), name='edit_event'),
 	# url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+	# url(r'^profile', UserProfile.as_view(), name='user_profile'),
 
 )

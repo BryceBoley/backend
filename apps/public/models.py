@@ -13,31 +13,33 @@ class Event(models.Model):
     # creator = models.OneToOneField(User)
     # date = models.parse_datetime()
 
-	def __str__(self):
-		return self.name
+    def __str__(self):
+        return self.name
 
 
 class Members(models.Model):
-	name = models.CharField(max_length=250)
-
-	def __str__(self):
-		return self.name
-
-class UserProfile(models.Model):
-    # user = models.OneToOneField(User)
-    phone_number = models.CharField(max_length=15)
-    street = models.CharField(max_length=75, blank=False)
-    city = models.CharField(max_length=50, blank=False)
-    state = models.CharField(max_length=35, blank=False)
-    food_allergies = models.TextField(max_length=75, default="Have any food allergies you want the group to know about?", blank=True)
-    profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
+    name = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.user.names
+        return self.name
+
+
+# class UserProfile(models.Model):
+#     # user = models.OneToOneField(User)
+#     phone_number = models.CharField(max_length=15)
+#     street = models.CharField(max_length=75, blank=False)
+#     city = models.CharField(max_length=50, blank=False)
+#     state = models.CharField(max_length=35, blank=False)
+#     food_allergies = models.TextField(max_length=75,
+#                                       default="Have any food allergies you want the group to know about?", blank=True)
+#     profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
+#
+#     def __str__(self):
+#         return self.user.names
 
 
 # class Group(models.Model):
-#     name = models.CharField(max_length=100)
+# name = models.CharField(max_length=100)
 #     description = models.TextField(blank=True, null=True, help_text="Describe your group")
 #     pics = models.ImageField(upload_to='photos', blank=True, null=True)
 #     event = models.ManyToManyField(Event)
