@@ -6,7 +6,7 @@ from django.contrib.auth.models import Group
 class Event(models.Model):
 	host = models.CharField(max_length=50)
 	location = models.TextField(help_text="Where should members go for your dinner group?")
-	when = models.TextField(blank=True, help_text="Where event is to take place")
+	when = models.TextField(blank=True, help_text="When event is to take place")
 	description = models.TextField(blank=True, help_text="Describe your group")
 	members = models.TextField(blank=True)
 	comments = models.TextField(blank=True)
