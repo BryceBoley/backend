@@ -8,7 +8,7 @@ class Event(models.Model):
     location = models.TextField(help_text="Where should members go for your dinner group?")
     when = models.TextField(blank=True, help_text="When event is to take place")
     description = models.TextField(blank=True, help_text="Describe your group")
-    members = models.ManyToManyField(Tag)
+    members = models.TextField(blank=True)
     comments = models.TextField(blank=True)
     #pics = models.ImageField(upload_to='photos', blank=True, null=True)
 
