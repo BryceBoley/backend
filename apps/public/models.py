@@ -4,28 +4,29 @@ from django.contrib.auth.models import Group
 
 
 class Event(models.Model):
-    host = models.ForeignKey(User)
-    description = models.TextField(blank=True, help_text="Describe your group")
-    location = models.TextField(help_text="Where should members go for your dinner group?")
-    # attendees = models.ForeignKey(Groups)
-    food_allergies = models.TextField(blank=True)
-    pics = models.ImageField(upload_to='photos', blank=True, null=True)
-    # creator = models.OneToOneField(User)
-    # date = models.parse_datetime()
+	# host = models.ForeignKey(User)
+	host = models.CharField(max_length=50, blank=True)
+	description = models.TextField(blank=True, help_text="Describe your group")
+	location = models.TextField(help_text="Where should members go for your dinner group?")
+	# attendees = models.ForeignKey(Groups)
+	food_allergies = models.TextField(blank=True)
+	pics = models.ImageField(upload_to='photos', blank=True, null=True)
+	# creator = models.OneToOneField(User)
+	# date = models.parse_datetime()
 
-    def __str__(self):
-        return self.name
+	def __str__(self):
+		return self.name
 
 
 class Members(models.Model):
-    name = models.CharField(max_length=250)
+	name = models.CharField(max_length=250)
 
-    def __str__(self):
-        return self.name
+	def __str__(self):
+		return self.name
 
 
 # class UserProfile(models.Model):
-#     # user = models.OneToOneField(User)
+# # user = models.OneToOneField(User)
 #     phone_number = models.CharField(max_length=15)
 #     street = models.CharField(max_length=75, blank=False)
 #     city = models.CharField(max_length=50, blank=False)
