@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 
 class Event(models.Model):
 	# host = models.ForeignKey(User)
-	host = models.CharField(max_length=50, blank=True)
+	host = models.CharField(max_length=50)
 	description = models.TextField(blank=True, help_text="Describe your group")
 	location = models.TextField(help_text="Where should members go for your dinner group?")
 	# attendees = models.ForeignKey(Groups)
@@ -15,10 +15,10 @@ class Event(models.Model):
 	# date = models.parse_datetime()
 
 	def __str__(self):
-		return self.name
+		return self.host
 
 
-class Members(models.Model):
+class Member(models.Model):
 	name = models.CharField(max_length=250)
 
 	def __str__(self):

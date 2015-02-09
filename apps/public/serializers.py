@@ -5,7 +5,7 @@ from models import *
 class MemberSerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = Members
+		model = Member
 
 
 class EventSerializer(serializers.ModelSerializer):

@@ -19,12 +19,12 @@ class EditEvent(generics.RetrieveUpdateDestroyAPIView):
 
 class AddMember(generics.CreateAPIView):
     serializer_class = MemberSerializer
-    queryset = Members.objects.all()
+    queryset = Member.objects.all()
 
 
-class MembersList(generics.ListAPIView):
+class MemberList(generics.ListAPIView):
     serializer_class = MemberSerializer
-    queryset = Members.objects.all()
+    queryset = Member.objects.all()
 
 
 # class UserProfile(generics.ListAPIView):
