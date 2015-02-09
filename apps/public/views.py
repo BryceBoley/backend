@@ -12,7 +12,7 @@ class AddEvent(generics.CreateAPIView):
     queryset = Event.objects.all()
 
 
-class EditEvent(generics.RetrieveUpdateDestroyAPIView):
+class DeleteEvent(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
 
