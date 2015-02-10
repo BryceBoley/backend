@@ -25,8 +25,3 @@ class AddMember(generics.CreateAPIView):
 class MemberList(generics.ListAPIView):
     serializer_class = MemberSerializer
     queryset = Member.objects.all()
-
-
-# class UserProfile(generics.ListAPIView):
-#     serializer_class = UserProfile
-#     queryset = UserProfile.objects.all()

@@ -15,10 +15,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('host', models.CharField(max_length=50)),
-                ('description', models.TextField(help_text=b'Describe your group', blank=True)),
                 ('location', models.TextField(help_text=b'Where should members go for your dinner group?')),
-                ('food_allergies', models.TextField(blank=True)),
-                ('pics', models.ImageField(null=True, upload_to=b'photos', blank=True)),
+                ('when', models.TextField(help_text=b'When event is to take place')),
+                ('description', models.TextField(help_text=b'Describe your group', blank=True)),
+                ('comments', models.TextField(blank=True)),
             ],
             options={
             },
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             name='Member',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=250)),
+                ('name', models.CharField(max_length=50)),
             ],
             options={
             },
