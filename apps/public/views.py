@@ -27,6 +27,6 @@ class MemberList(generics.ListAPIView):
     queryset = Member.objects.all()
 
 
-# class UserProfile(generics.ListAPIView):
-#     serializer_class = UserProfile
-#     queryset = UserProfile.objects.all()
+class EditMember(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = MemberSerializer
+    queryset = Member.objects.all()
