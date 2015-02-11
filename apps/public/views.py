@@ -6,26 +6,16 @@ class EventList(generics.ListCreateAPIView):
     queryset = Event.objects.all()
 
 
-class AddEvent(generics.CreateAPIView):
+class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
 
 
-class EditEvent(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = EventSerializer
-    queryset = Event.objects.all()
-
-
-class AddMember(generics.CreateAPIView):
+class MemberList(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
     queryset = Member.objects.all()
 
 
-class MemberList(generics.ListAPIView):
-    serializer_class = MemberSerializer
-    queryset = Member.objects.all()
-
-
-class EditMember(generics.RetrieveUpdateDestroyAPIView):
+class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MemberSerializer
     queryset = Member.objects.all()
