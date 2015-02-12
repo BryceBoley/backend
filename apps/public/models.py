@@ -4,14 +4,15 @@ from django.contrib.auth.models import Group
 
 # Create your models here.
 class Event(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True, null=True, help_text="Describe your group")
-    location = models.TextField(help_text="What can people put into maps to get to your house")
-    # members = models.ManyToManyField(User)
-    alergies = models.TextField(blank=True, null=True)
-    pics = models.ImageField(upload_to='photos', blank=True, null=True)
-    # creator = models.OneToOneField(User)
-    # date = models.parse_datetime()
+    title = models.CharField(max_length=100)
+    start = models.DateField(auto_now=False, auto_now_add=False, default=(2015-2-11))
+    comment = models.TextField(blank=True, null=True, help_text="comment")
+    host = models.TextField(blank=True, null=True, help_text="Who is hosting")
+    when = models.TextField(blank=True, null=True, max_length=10)
+
+
+    def __str__(self):
+        return self.title
 
 class Member(models.Model):
     name = models.CharField(max_length=50)
