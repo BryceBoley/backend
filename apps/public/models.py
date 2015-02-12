@@ -10,7 +10,7 @@ class Event(models.Model):
     host = models.TextField(blank=True, null=True, help_text="Who is hosting")
     when = models.TextField(blank=True, null=True, max_length=10)
 
-	def __str__(self):
+    def __str__(self):
         return self.title
 
 class Member(models.Model):
