@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
+from datetime import datetime
 
 # Create your models here.
 class Event(models.Model):
     title = models.CharField(max_length=100)
-    start = models.DateField(auto_now=False, auto_now_add=False, default=(2015-2-11))
+    start = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now())
     comment = models.TextField(blank=True, null=True, help_text="comment")
     host = models.TextField(blank=True, null=True, help_text="Who is hosting")
     when = models.TextField(blank=True, null=True, max_length=10)
