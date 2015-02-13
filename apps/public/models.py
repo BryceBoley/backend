@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 
 # Create your models here.
+
+
 class Event(models.Model):
     title = models.CharField(max_length=100)
     start = models.DateField(auto_now=False, auto_now_add=False, default=(2015-2-11))
@@ -12,6 +14,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Member(models.Model):
     name = models.CharField(max_length=50)
@@ -24,7 +27,3 @@ class Member(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-    
