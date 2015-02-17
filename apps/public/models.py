@@ -18,14 +18,14 @@ class Event(models.Model):
 
 
 class Member(models.Model):
-    name = models.CharField(max_length=50)
-    # last_name = models.CharField(max_length=50, blank=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, blank=True)
     phone_number = models.CharField(max_length=15, default="N/A")
     street = models.CharField(max_length=75, default="N/A")
-    # apartment_number = models.CharField(max_length=20, default="N/A", blank=True)
+    apartment_number = models.CharField(max_length=20, default="N/A", blank=True)
     city = models.CharField(max_length=50, default="N/A")
-    state = models.CharField(max_length=35, default="N/A")
-    # zip = models.CharField(max_length=20, default="N/A")
+    state = models.CharField(max_length=35, default="N/A", blank=True)
+    zip = models.CharField(max_length=20, default="N/A")
     allergy = models.TextField(max_length=75, default="Have any food allergies?", blank=True)
     # profile_picture = models.ImageField(upload_to='photos', blank=True, null=True)
 
