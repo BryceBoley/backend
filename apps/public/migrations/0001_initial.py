@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=100)),
-                ('start', models.DateField(default=datetime.datetime(2015, 2, 17, 22, 48, 14, 667535))),
+                ('start', models.DateField(default=datetime.datetime(2015, 2, 18, 1, 44, 52, 796215))),
                 ('comment', models.TextField(help_text=b'comment', null=True, blank=True)),
                 ('host', models.TextField(help_text=b'Who is hosting', null=True, blank=True)),
                 ('when', models.TextField(max_length=10, null=True, blank=True)),
@@ -33,11 +33,12 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(max_length=50, blank=True)),
                 ('phone_number', models.CharField(default=b'', max_length=15, blank=True)),
                 ('street', models.CharField(default=b'', max_length=75)),
-                ('apartment_number', models.CharField(default=b'', max_length=20, blank=True)),
+                ('apartment_number', models.CharField(default=b'', max_length=25, blank=True)),
                 ('city', models.CharField(default=b'', max_length=50)),
                 ('state', models.CharField(default=b'', max_length=35)),
                 ('zip', models.CharField(default=b'', max_length=20)),
                 ('allergy', models.TextField(default=b'Have any food allergies?', max_length=75, blank=True)),
+                ('profile_picture', models.ImageField(null=True, upload_to=b'photos', blank=True)),
             ],
             options={
             },
