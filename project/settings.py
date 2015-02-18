@@ -56,7 +56,7 @@ ROOT_URLCONF = 'project.urls'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-MEDIA_ROOT = '/Users/simplymac/PycharmProjects/dinner_group/backend/apps/public/media'
+MEDIA_ROOT = '../apps/public/media'
 
 MEDIA_URL = '/media/'
 # Database
