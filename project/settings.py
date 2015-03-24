@@ -36,13 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'apps.public',
-	'rest_framework',
-	'corsheaders',
+    'apps.public',
+    'rest_framework',
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
-	'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,7 +56,9 @@ ROOT_URLCONF = 'project.urls'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+MEDIA_ROOT = '/Users/simplymac/PycharmProjects/dinner_group/backend/apps/media'
 
+MEDIA_URL = '/media/'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -64,7 +66,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        }
 }
 
 # Internationalization
@@ -87,8 +89,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-	'localhost:8000',
-	'localhost/',
+    'localhost:8000',
+    'localhost/',
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# MEDIA_ROOT = file_path
+# Above class is a full path to a directory where you would like
+# Django to store uploaded files (uploaded pictures?)
