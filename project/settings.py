@@ -56,7 +56,8 @@ ROOT_URLCONF = 'project.urls'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-MEDIA_ROOT = '/Users/simplymac/PycharmProjects/dinner_group/backend/apps/media'
+# MEDIA_ROOT = '/Users/simplymac/PycharmProjects/dinner_group/backend/apps/media'
+MEDIA_ROOT = '/var/www/bryceboley.com/dinner_group/backend/apps/media'
 
 MEDIA_URL = '/media/'
 # Database
@@ -86,15 +87,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+STATIC_ROOT = '/var/www/bryceboley.com/dinner_group/backend/staticfiles'
 STATIC_URL = '/static/'
-
+CSRF_COOKIE_DOMAIN = 'dinner_group.bryceboley.com'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
+    'bryceboley.com'
 )
-
 CORS_ORIGIN_ALLOW_ALL = True
-
+CORS_ALLOW_CREDENTIALS = True
 
 # MEDIA_ROOT = file_path
 # Above class is a full path to a directory where you would like
